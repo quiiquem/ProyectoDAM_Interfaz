@@ -2,13 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Frontend\Dialogos\Crear_Funko.xaml.cs">
+    <Compile Update="Frontend\ControlUsuario\Crear_Funko.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Frontend\Dialogos\Eliminar_Funko.xaml.cs">
+    <Compile Update="Frontend\ControlUsuario\Eliminar_Funko.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Frontend\Dialogos\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Frontend\Mensajes\VentanaMensaje.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

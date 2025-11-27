@@ -8,9 +8,9 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         Icon="/Recursos/Iconos/Placeholder_LogoProyecto.png"
         mc:Ignorable="d"
-    ShowCloseButton="False"
     ShowMaxRestoreButton="False"
     ShowMinButton="False"
+    WindowStyle="None"
     ResizeMode="NoResize"
         Title="Login" Height="325" Width="350">
     <Grid>

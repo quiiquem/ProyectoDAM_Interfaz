@@ -10,7 +10,9 @@
 
   <ItemGroup>
     <None Remove="C:\Users\windows10\.nuget\packages\nlog.config\4.7.15\contentFiles\any\any\NLog.config" />
+    <None Remove="Recursos\Iconos\advertencia.png" />
     <None Remove="Recursos\Iconos\añadir_figura.png" />
+    <None Remove="Recursos\Iconos\error.png" />
     <None Remove="Recursos\Iconos\Placeholder_LogoProyecto.png" />
     <None Remove="Recursos\Imagenes\articulo.png" />
     <None Remove="Recursos\Imagenes\ayuda.png" />
@@ -27,14 +29,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Recursos\Iconos\advertencia.png" />
     <Resource Include="Recursos\Iconos\añadir_figura.png" />
+    <Resource Include="Recursos\Iconos\error.png" />
+    <Resource Include="Recursos\Iconos\info.png" />
     <Resource Include="Recursos\Imagenes\inventario.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Backend\Modelos\" />
     <Folder Include="Backend\Servicios\" />
-    <Folder Include="Frontend\ControlUsuario\" />
     <Folder Include="MWM\" />
     <Folder Include="Recursos\Estilos\" />
   </ItemGroup>

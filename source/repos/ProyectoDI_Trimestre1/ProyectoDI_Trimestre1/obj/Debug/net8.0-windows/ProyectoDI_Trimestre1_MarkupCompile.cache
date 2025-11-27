@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\App.xaml
-4341075562
+6-822737785
 1-453879178
-26-931257486
+29-387993151
 233-236694951
-Frontend\Dialogos\Crear_Funko.xaml;Frontend\Dialogos\Eliminar_Funko.xaml;Frontend\Dialogos\Login.xaml;MainWindow.xaml;
+Frontend\ControlUsuario\Crear_Funko.xaml;Frontend\ControlUsuario\Eliminar_Funko.xaml;Frontend\Dialogos\Login.xaml;Frontend\Mensajes\MensajeDialogo.xaml;Frontend\Mensajes\VentanaMensaje.xaml;MainWindow.xaml;
 
 False
 

@@ -1,0 +1,108 @@
+﻿<mah:MetroWindow x:Class="ProyectoDI_Trimestre1.Frontend.Dialogos.Crear_Funko"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     xmlns:materialDesignIcons="http://materialdesigninxaml.net/winfx/xaml/shared"
+        xmlns:local="clr-namespace:ProyectoDI_Trimestre1.Frontend.Dialogos"
+        Icon="/Recursos/Iconos/añadir_figura.png"
+   ShowTitleBar="False"
+   ShowCloseButton="False"
+   ShowMaxRestoreButton="False"
+   ShowMinButton="False"
+   WindowStyle="None"
+   ResizeMode="NoResize"
+        Title="Añadir Funko" Height="550" Width="600">
+    
+    
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--Añadir figura-->
+        <TextBlock Text="Añadir Figura" Grid.ColumnSpan="2" HorizontalAlignment="Center"
+                   FontSize="40" FontWeight="Bold"/>
+
+        <!--Nombre y Estado-->
+        <TextBlock Text="Nombre del Funko" Grid.Row="1" Margin="30,20,0,0"
+                   FontSize="20" FontStyle="Italic"/>
+        <!--<TextBox del nombre-->
+        <Border BorderBrush="#14a9ff" BorderThickness="2" CornerRadius="5"
+                Grid.Row="1" Margin="0,50,0,0" Width="280">
+            <TextBox x:Name="nombre_funko" Grid.Row="1" Background="White"/>
+        </Border>
+        <TextBlock Text="Estado del funko" Grid.Row="1" Margin="30,20,0,0"
+           FontSize="20" FontStyle="Italic" Grid.Column="1"/>
+        <!--<TextBox del nombre-->
+        <Border BorderBrush="#14a9ff" BorderThickness="2" CornerRadius="5"
+        Grid.Row="1" Margin="0,50,0,0" Width="280" Grid.Column="1">
+            <TextBox x:Name="estado_funko" Grid.Row="1" Background="White" />
+        </Border>
+
+        <!--Precio y Categoría-->
+        <TextBlock Text="Precio del Funko" Grid.Row="2" Margin="30,20,0,0"
+                   FontSize="20" FontStyle="Italic"/>
+        <!--Precio-->
+        <Border BorderBrush="#14a9ff" BorderThickness="2" CornerRadius="5"
+                Grid.Row="2" Margin="0,50,0,0" Width="280">
+            <TextBox x:Name="precio_funko" Grid.Row="2" Background="White"/>
+        </Border>
+        <!--Categoría-->
+        <TextBlock Text="Categoría del funko" Grid.Row="2" Margin="30,20,0,0"
+                 FontSize="20" FontStyle="Italic" Grid.Column="1"/>
+        <Border BorderBrush="#005dd6" BorderThickness="2" Grid.Row="2"
+                Margin="0,50,0,0" Width="280" Grid.Column="1">
+            <ComboBox x:Name="categoria_funko" Grid.Row="2" Background="White"/>
+        </Border>
+        <!--Edición y Stock-->
+        <TextBlock Text="Edición del Funko" Grid.Row="3" Margin="30,20,0,0"
+            FontSize="20" FontStyle="Italic"/>
+        <!--Edición-->
+        <Border BorderBrush="#005dd6" BorderThickness="2" Grid.Row="3"
+         Margin="0,50,0,0" Width="280">
+            <ComboBox x:Name="edicion_funko" Grid.Row="3" Background="White"/>
+        </Border>
+        <!--Stock (checkbox)-->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Stock disponible: " FontSize="20" FontStyle="Italic"/>
+            <CheckBox x:Name="Stock" Grid.Row="3" Grid.Column="1"/>
+        </StackPanel>
+
+        <!--Localización-->
+        <TextBlock Text="Localización del Funko" Grid.Row="4" Margin="30,20,0,0"
+             FontSize="20" FontStyle="Italic"/>
+        <Border BorderBrush="#14a9ff" BorderThickness="2" CornerRadius="5" Background="White"
+          Grid.Row="4" Margin="0,50,0,0" Width="280">
+            <TextBox x:Name="localizacion_funko" Grid.Row="4"/>
+        </Border>
+      
+        <!--Fecha de ingreso-->
+        <TextBlock Text="Fecha de Ingreso" Grid.Row="4" Margin="30,20,0,0"
+          FontSize="20" FontStyle="Italic" Grid.Column="1"/>
+        <Border BorderBrush="#14a9ff" BorderThickness="2" CornerRadius="5" Background="White"
+       Grid.Row="4" Margin="0,50,0,0" Width="280" Grid.Column="1">
+            <DatePicker SelectedDate="{Binding FechaIngreso}"/> <!--Hacer que sea una fecha y no texto puro-->
+        </Border>
+
+        <!--Botones CANCELAR y GUARDAR-->
+        <Button Grid.Row="5" Margin="0,40,0,0" Width="190" Height="60" Background="Transparent" 
+                BorderBrush="Red" BorderThickness="4" Content="CANCELAR" Foreground="Red"
+                FontSize="30" Click="Cancelar_Boton"/>
+
+
+        <Button Grid.Row="5" Margin="0,40,0,0" Width="190" Height="60" Background="Blue" 
+         BorderBrush="DarkBlue" BorderThickness="4" Content="GUARDAR" Foreground="White" Grid.Column="1"
+         FontSize="30" Click="Guardado"/>
+    </Grid>
+</mah:MetroWindow>

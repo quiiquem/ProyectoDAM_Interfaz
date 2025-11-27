@@ -133,7 +133,11 @@ C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\
 C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\ProyectoDI_Trimestre1.pdb
 C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\ProyectoDI_Trimestre1.genruntimeconfig.cache
 C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\ref\ProyectoDI_Trimestre1.dll
-C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Crear_Funko.g.cs
-C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Crear_Funko.baml
-C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Eliminar_Funko.g.cs
-C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Eliminar_Funko.baml
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\ControlUsuario\Crear_Funko.g.cs
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\ControlUsuario\Eliminar_Funko.g.cs
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Mensajes\VentanaMensaje.g.cs
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\ControlUsuario\Crear_Funko.baml
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\ControlUsuario\Eliminar_Funko.baml
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Mensajes\VentanaMensaje.baml
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Mensajes\MensajeDialogo.g.cs
+C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Mensajes\MensajeDialogo.baml
