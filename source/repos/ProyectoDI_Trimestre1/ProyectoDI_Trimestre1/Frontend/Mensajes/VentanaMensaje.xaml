@@ -16,6 +16,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
      
@@ -42,5 +43,14 @@
             Background="Transparent"
             BorderThickness="0"/>
 
+        <Button x:Name="Otra_Opcion" Grid.Row="4"
+              Click="Opcion_Extra_Click"
+              Content="CANCELAR"
+              FontSize="18"
+              Height="60"
+             Width="240"    
+             Background="Transparent"
+             BorderThickness="0"
+            />
     </Grid>
 </Window>

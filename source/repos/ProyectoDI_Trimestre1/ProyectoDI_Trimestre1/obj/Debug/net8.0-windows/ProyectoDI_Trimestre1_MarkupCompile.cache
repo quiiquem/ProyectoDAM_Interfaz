@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\
 ProyectoDI_Trimestre1
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\windows10\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\App.xaml
-6-822737785
-1-453879178
-29-387993151
-233-236694951
-Frontend\ControlUsuario\Crear_Funko.xaml;Frontend\ControlUsuario\Eliminar_Funko.xaml;Frontend\Dialogos\Login.xaml;Frontend\Mensajes\MensajeDialogo.xaml;Frontend\Mensajes\VentanaMensaje.xaml;MainWindow.xaml;
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\App.xaml
+71227558164
+
+31-1030073993
+233-41546406
+Frontend\ControlUsuario\Crear_Funko.xaml;Frontend\ControlUsuario\Editar_Funko.xaml;Frontend\ControlUsuario\Eliminar_Funko.xaml;Frontend\Dialogos\Login.xaml;Frontend\Mensajes\MensajeDialogo.xaml;Frontend\Mensajes\VentanaMensaje.xaml;MainWindow.xaml;
 
 False
 

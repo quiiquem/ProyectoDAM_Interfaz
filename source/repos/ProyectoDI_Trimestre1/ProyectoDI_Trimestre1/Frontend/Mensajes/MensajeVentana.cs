@@ -10,7 +10,8 @@ namespace ProyectoDI_Trimestre1.Frontend.Mensajes
     {
         Informacion,
         Advertencia,
-        Error
+        Error,
+        Opciones //Esta la he creado para que pueda hacer ventanas emergentes de "Estás seguro?"
     }
 
     /// <summary>
@@ -37,6 +38,10 @@ namespace ProyectoDI_Trimestre1.Frontend.Mensajes
         /// Color distintivo según el tipo de mensaje
         /// </summary>
         public SolidColorBrush ColorDistintivo { get; private set; }
+
+        //Boolean para que muestre cancelar o no dependiendo de la ventana (para que no salga en todas)
+        public bool MostrarOpciones { get; set; } = false;
+
 
         /// <summary>
         /// Tipo de mensaje (Información, Advertencia, Error)
@@ -216,6 +221,26 @@ namespace ProyectoDI_Trimestre1.Frontend.Mensajes
         {
             var mensaje = new MensajeError(titulo, cuerpo, tiempoAutoclose);
             mensaje.MostrarVentana();
+        }
+
+        public override void Mostrar()
+        {
+            MostrarVentana();
+        }
+    }
+
+    //El otro tipo de mensaje que quiero hacer, que es el de opciones (¿Estás seguro que quieres salir sin guardar? etc)
+    public class MensajeOpciones : MensajeVentana
+    {
+        private MensajeOpciones(string titulo, string cuerpo, int tiempoAutoclose = 0)
+            : base(titulo, cuerpo, TipoMensaje.Advertencia, tiempoAutoclose)
+        {
+            MostrarOpciones = true;
+        }
+
+        public static MensajeOpciones Crear(string titulo, string cuerpo)
+        {
+            return new MensajeOpciones(titulo, cuerpo);
         }
 
         public override void Mostrar()

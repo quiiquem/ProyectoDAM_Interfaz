@@ -1,4 +1,9 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using Microsoft.EntityFrameworkCore;
+using Mysqlx.Cursor;
+using ProyectoDI_Trimestre1.Backend.Modelo;
+using ProyectoDI_Trimestre1.Frontend.Mensajes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProyectoDI_Trimestre1.Frontend.Dialogos
 {
@@ -23,20 +28,51 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
         public Eliminar_Funko()
         {
             InitializeComponent();
+            CargarProductos();
         }
 
-        private void Borrar_Click(object sender, RoutedEventArgs e)
+
+        //Cargar nombres al iniciar la ventana
+        private void CargarProductos()
         {
-            MessageBoxResult result_borrar = MessageBox.Show( //Mostrar el cuadro de diálogo de cancelar
-  "¿Estás seguro?", "Eliminar Figura", MessageBoxButton.YesNo, MessageBoxImage.Question);
-         
-            // Si el usuario hace click en si lo cierra
-            if (result_borrar == MessageBoxResult.Yes)
+            using (var db = new EnriqueMinguetProyectoContext())
             {
-                MessageBox.Show("Figura eliminada con éxito", "Eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close(); //cerrar solo esa ventana en concreto
+                var productos = db.Productos.OrderBy(p => p.Nombre).ToList();
+                nombre_funko_eliminar.ItemsSource = productos;
             }
         }
+
+        //Borrar funko de la BD
+        private void Borrar_Click(object sender, RoutedEventArgs e)
+        {
+            var msg = MensajeOpciones.Crear("¿Seguro?", "¿Quieres borrar la figura?");
+            var ventana = new VentanaMensaje(msg);
+            ventana.ShowDialog();
+
+            if (!ventana.Resultado)
+                return;
+
+            string nombre = nombre_funko_eliminar.Text;
+
+            using (var db = new EnriqueMinguetProyectoContext())
+            {
+                var producto = db.Productos.FirstOrDefault(p => p.Nombre == nombre);
+
+                if (producto != null)
+                {
+                    db.Productos.Remove(producto);
+                    db.SaveChanges();
+
+                    MensajeInformacion.Mostrar("Funko eliminado correctamente.", "¡Realizado con éxito!");
+                    this.Close();
+                }
+                else
+                {
+                    MensajeError.Mostrar("No se encontró el Funko.", "Error");
+                }
+            }
+        }
+
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {

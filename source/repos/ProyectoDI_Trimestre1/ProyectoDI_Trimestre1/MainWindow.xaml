@@ -24,7 +24,7 @@
                 <materialDesign:PackIcon Kind="account"/>
                 <!--Tengo que hacer una ventana donde enseñe su email y todo-->
             </Button>
-            
+
             <!--Minimizar boton-->
             <Button ToolTip="Minimizar" x:Name="min_window" Click="min_window_Click">
                 <materialDesign:PackIcon Kind="WindowMinimize"/>
@@ -43,6 +43,7 @@
     </mah:MetroWindow.RightWindowCommands>
 
     <Grid>
+        
         <!--Definiciones de columnas-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2.5*"/>
@@ -57,10 +58,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        
+
         <!--Para que la fila entera tenga ese color negro-->
         <Border Grid.Row="0" Background="#252525" Grid.ColumnSpan="4"/>
-        
+
         <!--<Menu principal-->
         <Menu x:Name="Menu_Principal"  HorizontalAlignment="Left" Height="Auto"
               VerticalAlignment="Top" Width="Auto" IsMainMenu="True" 
@@ -86,7 +87,7 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Foreground" Value="Black"/>
                         </Trigger>
-                        
+
                     </Style.Triggers>
                 </Style>
             </Menu.Resources>
@@ -202,6 +203,5 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-       
     </Grid>
 </mah:MetroWindow>

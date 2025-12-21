@@ -12,6 +12,7 @@
     ShowMinButton="False"
     WindowStyle="None"
     ResizeMode="NoResize"
+                 KeyDown="Window_KeyDown"
         Title="Login" Height="325" Width="350">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -60,7 +61,7 @@
                     Foreground="White" x:Name="btn_login" Click="btn_login_Click"  
                 Style="{StaticResource MaterialDesignRaisedButton}" mat:ButtonAssist.CornerRadius="12"/>
             <!--Esta línea hace que el botón sea más redondo-->
-
+            
         </Grid>
     </Grid>
     </mah:MetroWindow>

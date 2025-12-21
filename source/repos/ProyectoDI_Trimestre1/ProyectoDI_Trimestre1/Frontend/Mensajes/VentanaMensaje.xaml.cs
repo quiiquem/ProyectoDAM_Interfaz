@@ -20,6 +20,8 @@ namespace ProyectoDI_Trimestre1.Frontend.Mensajes
     public partial class VentanaMensaje : Window
     {
         MensajeVentana _mensajeVentana;
+        public bool Resultado { get; private set; }
+
         public VentanaMensaje(MensajeVentana mensajeVentana)
         {
             InitializeComponent();
@@ -32,11 +34,23 @@ namespace ProyectoDI_Trimestre1.Frontend.Mensajes
             tbMensaje.Text = _mensajeVentana.Cuerpo;
             tbTitulo.Text = _mensajeVentana.Titulo;
             Aceptar.Background = _mensajeVentana.ColorDistintivo;
+
+            //Mostrar o ocultar el segundo boton segun el tipo de mensaje que es
+            Otra_Opcion.Visibility = _mensajeVentana.MostrarOpciones ? Visibility.Visible : Visibility.Collapsed; 
         }
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
+            Resultado = true;
             this.Close();
         }
+
+        private void Opcion_Extra_Click(object sender, RoutedEventArgs e)
+        {
+            Resultado = false;
+            this.Close();
+        }
+
+
     }
 }

@@ -5,6 +5,9 @@
     <Compile Update="Frontend\ControlUsuario\Crear_Funko.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Frontend\ControlUsuario\Editar_Funko.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Frontend\ControlUsuario\Eliminar_Funko.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

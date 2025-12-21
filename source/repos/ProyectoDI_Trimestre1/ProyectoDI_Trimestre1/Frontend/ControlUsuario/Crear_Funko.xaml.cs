@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using System.Windows.Input;
+using ProyectoDI_Trimestre1.Backend;
+using ProyectoDI_Trimestre1.Backend.Modelo;
+using ProyectoDI_Trimestre1.Frontend.Mensajes;
 
 namespace ProyectoDI_Trimestre1.Frontend.Dialogos
 {
@@ -23,39 +17,128 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
         public Crear_Funko()
         {
             InitializeComponent();
+            CargarCategorias();
+            CargarUbicaciones();
         }
 
+        //Permitir solo números en algunos textboxs
+        private void SoloNumeros(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !int.TryParse(e.Text, out _);
+        }
 
+        //Permitir solo DECIMALES en algunos textboxs
+        private void SoloDecimales(object sender, TextCompositionEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            // Permitir solo dígitos y un único separador decimal
+            if (char.IsDigit(e.Text, 0))
+            {
+                e.Handled = false;
+            }
+            else if ((e.Text == "." || e.Text == ",") && !tb.Text.Contains('.') && !tb.Text.Contains(','))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Cargar categorías al iniciar la ventana
+        private void CargarCategorias() {
+            using (var db = new EnriqueMinguetProyectoContext()) { 
+                var categorias = db.Categorias.OrderBy(c => c.Idcategorias).ToList(); 
+                categoria_funko.ItemsSource = categorias; } 
+        }
+
+        //Cargar ubicaciones al iniciar la ventana
+        private void CargarUbicaciones()
+        {
+            using (var db = new EnriqueMinguetProyectoContext())
+            {
+                var ubicaciones = db.Ubicacions.OrderBy(u => u.IdUbicacion).ToList();
+                ubicacion_funko.ItemsSource = ubicaciones;
+            }
+        }
+
+        // Evento para marcar/desmarcar stock
         private void Hay_Stock(object sender, RoutedEventArgs e)
         {
             if (Stock.IsChecked == true)
             {
-
                 Stock.IsChecked = false;
             }
         }
 
-
-
-
         private void Cancelar_Boton(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show( //Mostrar el cuadro de diálogo de cancelar
-     "No has guardado los datos, ¿Estás seguro?","Cancelar",MessageBoxButton.YesNo,MessageBoxImage.Warning
- );
+            var msg = MensajeOpciones.Crear("¿Seguro?", "¿Quieres cancelar la operación?");
+            var ventana = new VentanaMensaje(msg);
+            ventana.ShowDialog();
 
-            // Puedes comprobar qué botón pulsó el usuario
-            if (result == MessageBoxResult.Yes)
+            if (ventana.Resultado)
             {
-                this.Close(); //cerrar solo esa ventana en concreto
+                // Usuario pulsó ACEPTAR
+                this.Close();
             }
+            else
+            {
+                // Usuario pulsó CANCELAR
+            }
+
         }
 
         private void Guardado(object sender, RoutedEventArgs e)
         {
-          
+            //Pasar los valores finales para guardar en la BD
+            String nombre = nombre_funko.Text;
+            decimal.TryParse(precio_funko.Text, out decimal precio); //pasar a decimal el precio, para que concuerde con la BD
+            String categoria = categoria_funko.Text;
+            int.TryParse(cantidad_stock.Text, out int cantidad); //pasar a int la cantidad, para que concuerde con la BD
+            String ubicacion = ubicacion_funko.Text;
+            int idubicacion = (int)ubicacion_funko.SelectedValue; //pillar la idUbicacion seleccionada, ya que es PK de FK
+            DateTime? fecha = fecha_funko.SelectedDate;
+
+            if(string.IsNullOrWhiteSpace(nombre) || precio <= 0 || string.IsNullOrWhiteSpace(categoria))
+            {
+                MensajeAdvertencia.Mostrar("Por favor, rellene todos los campos obligatorios.", "Warning");
+                return;
+            } else
+            {
+                var producto = new Producto {  //Crear objeto producto
+                    Nombre = nombre, 
+                    Precio = precio, 
+                    CantidadStock = cantidad, 
+                    FechaIngreso = fecha, 
+                    Categoria = categoria,
+                    UbicacionAlmacen = ubicacion,
+                    UbicacionIdUbicacion = idubicacion
+                };
+
+                //GUARDAR EN LA BD EL PRODUCTO CREADO
+                using (var db = new EnriqueMinguetProyectoContext()) { 
+                    db.Productos.Add(producto); 
+                    db.SaveChanges(); }
+
+                MensajeInformacion.Mostrar("Funko guardado correctamente.", "¡Realizado con éxito!");
+                this.Close();
+
+            }
+
         }
 
-     
+        // Mostrar u ocultar panel de cantidad según el estado del checkbox
+        private void Stock_Checked(object sender, RoutedEventArgs e)
+        { 
+            CantidadStock_Panel.Visibility = Visibility.Visible;
+        }
+
+        private void Stock_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CantidadStock_Panel.Visibility = Visibility.Collapsed;
+        }
     }
 }
