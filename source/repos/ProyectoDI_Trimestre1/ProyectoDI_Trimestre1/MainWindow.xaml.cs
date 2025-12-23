@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using ProyectoDI_Trimestre1.Frontend.ControlUsuario;
 using ProyectoDI_Trimestre1.Frontend.Dialogos;
 using System.Windows;
 
@@ -67,6 +68,10 @@ namespace ProyectoDI_Trimestre1
             Eliminar_Figura_Ventana.Show(); //hacer que se vea dicha ventana
         }
 
-     
+        private void Editar_Click(object sender, RoutedEventArgs e)
+        {
+            MetroWindow Editar_Figura_Ventana = new Editar_Funko(); //poner value a la ventana que quiero mostrar
+            Editar_Figura_Ventana.Show(); //hacer que se vea dicha ventana
+        }
     }
 }

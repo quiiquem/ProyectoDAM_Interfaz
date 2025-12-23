@@ -107,7 +107,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <!--Editar Producto-->
-                <MenuItem Header="Editar Producto">
+                <MenuItem Header="Editar Producto" Click="Editar_Click">
                     <MenuItem.Icon>
                         <materialDesign:PackIcon Kind="BoxEdit"/>
                     </MenuItem.Icon>

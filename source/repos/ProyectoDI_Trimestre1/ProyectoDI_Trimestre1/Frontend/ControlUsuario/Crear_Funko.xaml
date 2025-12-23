@@ -12,8 +12,7 @@
    ShowMinButton="False"
    WindowStyle="None"
    ResizeMode="NoResize"
-        Title="Añadir Funko" Height="550" Width="600">
-    
+        Title="Añadir Funko" Height="500" Width="600">
     
     <Grid>
         <Grid.ColumnDefinitions>
