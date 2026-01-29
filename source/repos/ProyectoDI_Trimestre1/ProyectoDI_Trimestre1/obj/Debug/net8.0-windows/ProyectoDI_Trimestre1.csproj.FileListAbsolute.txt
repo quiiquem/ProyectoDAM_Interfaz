@@ -285,3 +285,9 @@ C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1
 C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\ref\ProyectoDI_Trimestre1.dll
 C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\ControlUsuario\Editar_Funko.g.cs
 C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\ControlUsuario\Editar_Funko.baml
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Anyadir_Figura.g.cs
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Editar_Figura.g.cs
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Eliminar_Figura.g.cs
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Anyadir_Figura.baml
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Editar_Figura.baml
+C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\obj\Debug\net8.0-windows\Frontend\Dialogos\Eliminar_Figura.baml

@@ -1,9 +1,9 @@
 ﻿using MahApps.Metro.Controls;
-using ProyectoDI_Trimestre1.Frontend.ControlUsuario;
-using ProyectoDI_Trimestre1.Frontend.Dialogos;
+using Proyecto_Intermodular_Gestion.Frontend.ControlUsuario;
+using Proyecto_Intermodular_Gestion.Frontend.Dialogos;
 using System.Windows;
 
-namespace ProyectoDI_Trimestre1
+namespace Proyecto_Intermodular_Gestion
 { 
     public partial class MainWindow : MetroWindow
     {
@@ -53,6 +53,7 @@ namespace ProyectoDI_Trimestre1
 
         //Botones que abren dialogos (Crear, Borrar, Modificar...)
 
+        //Por ahora Localizar Click solo va a tener que salga en mainwindow, conforme tenga más eventualmente moveré todo a la misma ventana
 
         //Crear Funko
         private void Crear_Click(object sender, RoutedEventArgs e) //Ventana Dialogo Crear Funko
@@ -72,6 +73,11 @@ namespace ProyectoDI_Trimestre1
         {
             MetroWindow Editar_Figura_Ventana = new Editar_Funko(); //poner value a la ventana que quiero mostrar
             Editar_Figura_Ventana.Show(); //hacer que se vea dicha ventana
+        }
+
+        private void Localizar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

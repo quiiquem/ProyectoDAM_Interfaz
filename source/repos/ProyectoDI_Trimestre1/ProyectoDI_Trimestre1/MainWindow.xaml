@@ -1,5 +1,5 @@
-﻿<mah:MetroWindow x:Class="ProyectoDI_Trimestre1.MainWindow"
-                 xmlns:local="clr-namespace:ProyectoDI_Trimestre1"
+﻿<mah:MetroWindow x:Class="Proyecto_Intermodular_Gestion.MainWindow"
+                 xmlns:local="clr-namespace:Proyecto_Intermodular_Gestion"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
@@ -113,16 +113,15 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <!--Localizar Producto-->
-                <MenuItem Header="Localizar Producto">
+                <MenuItem Header="Localizar Producto" Click="Localizar_Click">
                     <MenuItem.Icon>
                         <materialDesign:PackIcon Kind="Location"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-
             <!--Administración Cliente (asi luego hago uno para empleados como administrador)-->
             <MenuItem Header="Administración de clientes">
-                <!--Editar Usuarios, Roles y lista negra-->
+                <!--Editar Usuarios, Roleses y lista negra-->
                 <MenuItem Header="Configuración Usuario">
                     <MenuItem.Icon>
                         <materialDesign:PackIcon Kind="Toolbox"/>
@@ -133,8 +132,8 @@
                             <materialDesign:PackIcon Kind="UserEdit"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <!--Editar Roles-->
-                    <MenuItem Header="Editar Roles">
+                    <!--Editar Roleses-->
+                    <MenuItem Header="Editar Roleses">
                         <MenuItem.Icon>
                             <materialDesign:PackIcon Kind="Edit"/>
                         </MenuItem.Icon>
@@ -203,5 +202,12 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+        <Grid x:Name="Grid_Localizar" Grid.Row="1" Grid.ColumnSpan="4" Visibility="Visible" Margin="10">
+            <!--Aquí irá todo el contenido para localizar productos-->
+            <TextBlock Text="Funcionalidad de Localizar Productos en desarrollo..." 
+                FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
     </Grid>
+
+   
 </mah:MetroWindow>

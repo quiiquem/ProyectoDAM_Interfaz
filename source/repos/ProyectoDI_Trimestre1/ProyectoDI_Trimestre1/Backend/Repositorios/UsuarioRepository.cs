@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoDI_Trimestre1.Backend.Repositorios
+namespace Proyecto_Intermodular_Gestion.Backend.Repositorios
 {
     internal class UsuarioRepository
     {

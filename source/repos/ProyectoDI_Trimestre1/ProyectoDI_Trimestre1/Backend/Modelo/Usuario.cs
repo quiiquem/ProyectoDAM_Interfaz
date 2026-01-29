@@ -4,9 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoDI_Trimestre1.Backend.Modelo;
+namespace Proyecto_Intermodular_Gestion.Backend.Modelo;
 
-[Table("usuarios")]
+[Table("usuario")]
+[Index("Email", Name = "email_UNIQUE", IsUnique = true)]
 public partial class Usuario
 {
     [Key]
@@ -17,13 +18,17 @@ public partial class Usuario
     [StringLength(17)]
     public string NomUsuario { get; set; } = null!;
 
-    [Column("contraseña_usuario")]
+    [Column("contrasenya_usuario")]
     [StringLength(60)]
-    public string ContraseñaUsuario { get; set; } = null!;
+    public string Contrasenya_Usuario { get; set; } = null!;
+
+    [Column("email")]
+    [StringLength(100)]
+    public string Email { get; set; } = null!;
 
     [InverseProperty("UsuariosIdusuarioNavigation")]
-    public virtual ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
+    public virtual Cliente? Cliente { get; set; }
 
     [InverseProperty("UsuariosIdusuarioNavigation")]
-    public virtual ICollection<Role> Roles { get; set; } = new List<Role>();
+    public virtual ICollection<Roles> Roleses { get; set; } = new List<Roles>();
 }

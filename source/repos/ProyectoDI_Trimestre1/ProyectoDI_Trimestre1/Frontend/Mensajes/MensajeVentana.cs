@@ -1,7 +1,7 @@
 ﻿using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace ProyectoDI_Trimestre1.Frontend.Mensajes
+namespace Proyecto_Intermodular_Gestion.Frontend.Mensajes
 {
     /// <summary>
     /// Enumeración para los tipos de mensajes

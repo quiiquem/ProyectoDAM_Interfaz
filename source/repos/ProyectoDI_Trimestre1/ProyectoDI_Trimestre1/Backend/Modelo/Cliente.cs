@@ -4,36 +4,45 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoDI_Trimestre1.Backend.Modelo;
+namespace Proyecto_Intermodular_Gestion.Backend.Modelo;
 
-[PrimaryKey("Dni", "UsuariosIdusuario")]
 [Table("cliente")]
-[Index("Email", Name = "Email_UNIQUE", IsUnique = true)]
 [Index("UsuariosIdusuario", Name = "fk_cliente_USUARIOS1_idx")]
 public partial class Cliente
 {
     [Key]
-    [Column("DNI")]
-    [StringLength(9)]
-    public string Dni { get; set; } = null!;
+    [Column("USUARIOS_IDUsuario")]
+    public int UsuariosIdusuario { get; set; }
 
     [StringLength(45)]
     public string Nombre { get; set; } = null!;
 
-    [StringLength(90)]
-    public string? Apellidos { get; set; }
+    [StringLength(50)]
+    public string Apellido1 { get; set; } = null!;
 
     [StringLength(80)]
-    public string? Dirección { get; set; }
+    public string Dirección { get; set; } = null!;
+
+    [StringLength(50)]
+    public string? Apellido2 { get; set; }
+
+    [StringLength(80)]
+    public string Pais { get; set; } = null!;
 
     [StringLength(100)]
-    public string Email { get; set; } = null!;
+    public string Ciudad { get; set; } = null!;
 
-    [Key]
-    [Column("USUARIOS_IDUsuario")]
-    public int UsuariosIdusuario { get; set; }
+    public int CodPostal { get; set; }
+
+    public int Telefono { get; set; }
+
+    [StringLength(50)]
+    public string? Provincia { get; set; }
+
+    [InverseProperty("ClienteUsuariosIdusuarioNavigation")]
+    public virtual ICollection<Compra> Compras { get; set; } = new List<Compra>();
 
     [ForeignKey("UsuariosIdusuario")]
-    [InverseProperty("Clientes")]
+    [InverseProperty("Cliente")]
     public virtual Usuario UsuariosIdusuarioNavigation { get; set; } = null!;
 }

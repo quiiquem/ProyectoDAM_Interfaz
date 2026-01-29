@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProyectoDI_Trimestre1.Frontend.Mensajes
+namespace Proyecto_Intermodular_Gestion.Frontend.Mensajes
 {
     /// <summary>
     /// Interaction logic for VentanaMensaje.xaml

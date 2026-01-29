@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
-using ProyectoDI_Trimestre1.Backend.Modelo;
-using ProyectoDI_Trimestre1.Frontend.Mensajes;
+using Proyecto_Intermodular_Gestion.Backend.Modelo;
+using Proyecto_Intermodular_Gestion.Frontend.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
+namespace Proyecto_Intermodular_Gestion.Frontend.ControlUsuario
 {
     /// <summary>
     /// Lógica de interacción para Editar_Funko.xaml
@@ -31,10 +31,37 @@ namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
             CargarUbicaciones();
         }
 
+
+        //Permitir solo números en algunos textboxs
+        private void SoloNumeros(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !int.TryParse(e.Text, out _);
+        }
+
+        //Permitir solo DECIMALES en algunos textboxs
+        private void SoloDecimales(object sender, TextCompositionEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            // Permitir solo dígitos y un único separador decimal
+            if (char.IsDigit(e.Text, 0))
+            {
+                e.Handled = false;
+            }
+            else if ((e.Text == "." || e.Text == ",") && !tb.Text.Contains('.') && !tb.Text.Contains(','))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         //Cargar Productos
         private void CargarProductos()
         {
-            using (var db = new EnriqueMinguetProyectoContext())
+            using (var db = new ProyectoIntermodularContext())
             {
                 var productos = db.Productos.OrderBy(p => p.Nombre).ToList();
                 funko_elegido_editar.ItemsSource = productos;
@@ -45,7 +72,7 @@ namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
         //Cargar Categorias al iniciar la ventana
         private void CargarCategorias()
         {
-            using (var db = new EnriqueMinguetProyectoContext())
+            using (var db = new ProyectoIntermodularContext())
             {
                 var categorias = db.Categorias.OrderBy(c => c.Idcategorias).ToList();
                 categoria_funko_editar.ItemsSource = categorias;
@@ -56,7 +83,7 @@ namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
         //Cargar Ubicaciones al iniciar la ventana
         private void CargarUbicaciones()
         {
-            using (var db = new EnriqueMinguetProyectoContext())
+            using (var db = new ProyectoIntermodularContext())
             {
                 var ubicaciones = db.Ubicacions.OrderBy(u => u.IdUbicacion).ToList();
                 funko_ubicacion_editar.ItemsSource = ubicaciones;
@@ -130,7 +157,7 @@ namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
 
             if (ventana.Resultado)
             {
-
+                
                 // Obtener datos del formulario
                 string nombre = txt_nombre_funko_editar.Text;
                 decimal.TryParse(txt_precio_funko_editar.Text, out decimal precio);
@@ -139,6 +166,12 @@ namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
                 int.TryParse(stock_funko_editar.Text, out int cantidad);
                 int idubicacion = (int)funko_ubicacion_editar.SelectedValue;
                 DateTime? fecha = fecha_funko_editar.SelectedDate;
+
+                if(nombre.Length== 0 || precio <= 0 || categoria.Length==0)
+                {
+                    MensajeError.Mostrar("Error", "Por favor, rellena todos los campos correctamente.");
+                    return;
+                }
 
                 // Obtener el producto original
                 var producto = funko_elegido_editar.SelectedItem as Producto;
@@ -153,7 +186,7 @@ namespace ProyectoDI_Trimestre1.Frontend.ControlUsuario
                 producto.UbicacionIdUbicacion = idubicacion;
 
                 // Guardar cambios en la BD
-                using (var db = new EnriqueMinguetProyectoContext())
+                using (var db = new ProyectoIntermodularContext())
                 {
                     db.Productos.Update(producto);
                     db.SaveChanges();

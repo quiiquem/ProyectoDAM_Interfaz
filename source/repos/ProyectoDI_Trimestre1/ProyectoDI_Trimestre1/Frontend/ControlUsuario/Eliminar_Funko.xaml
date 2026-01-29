@@ -1,4 +1,4 @@
-﻿<mah:MetroWindow x:Class="ProyectoDI_Trimestre1.Frontend.Dialogos.Eliminar_Funko"
+﻿<mah:MetroWindow x:Class="Proyecto_Intermodular_Gestion.Frontend.Dialogos.Eliminar_Funko"
        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
@@ -8,7 +8,7 @@
    ShowMaxRestoreButton="False"
    ShowMinButton="False"
    WindowStyle="None"
-    xmlns:local="clr-namespace:ProyectoDI_Trimestre1.Frontend.Dialogos"
+    xmlns:local="clr-namespace:Proyecto_Intermodular_Gestion.Frontend.Dialogos"
     Icon="/Recursos/Iconos/añadir_figura.png"
     Title="Eliminar Funko" Height="320" Width="300">
     <Grid>

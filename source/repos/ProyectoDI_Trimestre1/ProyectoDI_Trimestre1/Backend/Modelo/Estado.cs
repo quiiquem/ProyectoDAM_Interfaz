@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoDI_Trimestre1.Backend.Modelo;
+namespace Proyecto_Intermodular_Gestion.Backend.Modelo;
 
 [Table("estado")]
 public partial class Estado

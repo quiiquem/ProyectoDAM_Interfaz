@@ -4,33 +4,36 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoDI_Trimestre1.Backend.Modelo;
+namespace Proyecto_Intermodular_Gestion.Backend.Modelo;
 
-[PrimaryKey("Idcompra", "ProductoIdProducto", "ClienteDni", "CategoriasIdcategorias")]
+[PrimaryKey("Idcompra", "ProductoIdProducto")]
 [Table("compra")]
-[Index("ProductoIdProducto", Name = "fk_COMPRAN_PRODUCTO1_idx")]
-[Index("CategoriasIdcategorias", Name = "fk_compra_categorias1_idx")]
-[Index("ClienteDni", Name = "fk_compran_cliente1_idx")]
+[Index("ClienteUsuariosIdusuario", Name = "fk_compra_cliente1_idx")]
+[Index("ProductoIdProducto", Name = "fk_compra_producto1_idx")]
 public partial class Compra
 {
     [Key]
-    [Column("IDCompra")]
+    [Column("idcompra")]
     public int Idcompra { get; set; }
 
+    [Column("cliente_USUARIOS_IDUsuario")]
+    public int ClienteUsuariosIdusuario { get; set; }
+
+    [Column("precio_total")]
+    [Precision(10, 0)]
+    public decimal PrecioTotal { get; set; }
+
+    [Column("fecha_compra", TypeName = "date")]
+    public DateTime FechaCompra { get; set; }
+
     [Key]
-    [Column("PRODUCTO_ID_Producto")]
+    [Column("producto_ID_Producto")]
     public int ProductoIdProducto { get; set; }
 
-    [Key]
-    [Column("cliente_DNI")]
-    [StringLength(9)]
-    public string ClienteDni { get; set; } = null!;
+    [Column("cantidad_figuras")]
+    public int CantidadFiguras { get; set; }
 
-    [Key]
-    [Column("categorias_idcategorias")]
-    public int CategoriasIdcategorias { get; set; }
-
-    [ForeignKey("CategoriasIdcategorias")]
+    [ForeignKey("ClienteUsuariosIdusuario")]
     [InverseProperty("Compras")]
-    public virtual Categoria CategoriasIdcategoriasNavigation { get; set; } = null!;
+    public virtual Cliente ClienteUsuariosIdusuarioNavigation { get; set; } = null!;
 }

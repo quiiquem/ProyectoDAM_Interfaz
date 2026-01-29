@@ -3,11 +3,11 @@ using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using System.Windows.Input;
-using ProyectoDI_Trimestre1.Backend;
-using ProyectoDI_Trimestre1.Backend.Modelo;
-using ProyectoDI_Trimestre1.Frontend.Mensajes;
+using Proyecto_Intermodular_Gestion.Backend;
+using Proyecto_Intermodular_Gestion.Backend.Modelo;
+using Proyecto_Intermodular_Gestion.Frontend.Mensajes;
 
-namespace ProyectoDI_Trimestre1.Frontend.Dialogos
+namespace Proyecto_Intermodular_Gestion.Frontend.Dialogos
 {
     /// <summary>
     /// Lógica de interacción para Crear_Funko.xaml
@@ -49,7 +49,7 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
 
         //Cargar categorías al iniciar la ventana
         private void CargarCategorias() {
-            using (var db = new EnriqueMinguetProyectoContext()) { 
+            using (var db = new ProyectoIntermodularContext()) { 
                 var categorias = db.Categorias.OrderBy(c => c.Idcategorias).ToList(); 
                 categoria_funko.ItemsSource = categorias; } 
         }
@@ -57,7 +57,7 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
         //Cargar ubicaciones al iniciar la ventana
         private void CargarUbicaciones()
         {
-            using (var db = new EnriqueMinguetProyectoContext())
+            using (var db = new ProyectoIntermodularContext())
             {
                 var ubicaciones = db.Ubicacions.OrderBy(u => u.IdUbicacion).ToList();
                 ubicacion_funko.ItemsSource = ubicaciones;
@@ -119,7 +119,7 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
                 };
 
                 //GUARDAR EN LA BD EL PRODUCTO CREADO
-                using (var db = new EnriqueMinguetProyectoContext()) { 
+                using (var db = new ProyectoIntermodularContext()) { 
                     db.Productos.Add(producto); 
                     db.SaveChanges(); }
 

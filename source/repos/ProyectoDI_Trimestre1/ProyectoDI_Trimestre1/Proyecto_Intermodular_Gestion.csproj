@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Backend\Servicios\**" />
+    <EmbeddedResource Remove="Backend\Servicios\**" />
+    <None Remove="Backend\Servicios\**" />
+    <Page Remove="Backend\Servicios\**" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Recursos\Iconos\advertencia.png" />
+		<None Remove="Recursos\Iconos\añadir_figura.png" />
+		<None Remove="Recursos\Iconos\error.png" />
+		<None Remove="Recursos\Iconos\Placeholder_LogoProyecto.png" />
+		<None Remove="Recursos\Imagenes\articulo.png" />
+		<None Remove="Recursos\Imagenes\ayuda.png" />
+		<None Remove="Recursos\Imagenes\busqueda.png" />
+		<None Remove="Recursos\Imagenes\inventario.png" />
+		<None Remove="Recursos\Imagenes\llave.png" />
+		<None Remove="Recursos\Imagenes\reiniciar.png" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recursos\Iconos\advertencia.png" />
+    <Resource Include="Recursos\Iconos\añadir_figura.png" />
+    <Resource Include="Recursos\Iconos\error.png" />
+    <Resource Include="Recursos\Iconos\info.png" />
+    <Resource Include="Recursos\Imagenes\inventario.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Recursos\Estilos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="5.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="NLog.Config" Version="4.7.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recursos\Iconos\Placeholder_LogoProyecto.png" />
+    <Resource Include="Recursos\Imagenes\articulo.png" />
+    <Resource Include="Recursos\Imagenes\ayuda.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recursos\Imagenes\busqueda.png" />
+    <Resource Include="Recursos\Imagenes\llave.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Recursos\Imagenes\reiniciar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

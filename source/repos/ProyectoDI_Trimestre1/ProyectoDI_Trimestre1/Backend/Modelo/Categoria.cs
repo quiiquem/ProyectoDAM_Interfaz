@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoDI_Trimestre1.Backend.Modelo;
+namespace Proyecto_Intermodular_Gestion.Backend.Modelo;
 
 [Table("categorias")]
 [Index("Idcategorias", Name = "idcategorias_UNIQUE", IsUnique = true)]
@@ -19,5 +19,5 @@ public partial class Categoria
     public string? Descripcion { get; set; }
 
     [InverseProperty("CategoriasIdcategoriasNavigation")]
-    public virtual ICollection<Compra> Compras { get; set; } = new List<Compra>();
+    public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
 }

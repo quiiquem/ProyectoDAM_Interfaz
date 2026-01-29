@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\enriq\Documents\ProyectoDAM_Interfaz\source\repos\ProyectoDI_Trimestre1\ProyectoDI_Trimestre1\App.xaml
-71227558164
+101983995026
 
-331467000097
+35-1954951171
 233-41546406
-Frontend\ControlUsuario\Crear_Funko.xaml;Frontend\ControlUsuario\Editar_Funko.xaml;Frontend\ControlUsuario\Eliminar_Funko.xaml;Frontend\Dialogos\Login.xaml;Frontend\Mensajes\MensajeDialogo.xaml;Frontend\Mensajes\VentanaMensaje.xaml;MainWindow.xaml;
+Frontend\ControlUsuario\Crear_Funko.xaml;Frontend\ControlUsuario\Editar_Funko.xaml;Frontend\ControlUsuario\Eliminar_Funko.xaml;Frontend\Dialogos\Anyadir_Figura.xaml;Frontend\Dialogos\Editar_Figura.xaml;Frontend\Dialogos\Eliminar_Figura.xaml;Frontend\Dialogos\Login.xaml;Frontend\Mensajes\MensajeDialogo.xaml;Frontend\Mensajes\VentanaMensaje.xaml;MainWindow.xaml;
 
-True
+False
 

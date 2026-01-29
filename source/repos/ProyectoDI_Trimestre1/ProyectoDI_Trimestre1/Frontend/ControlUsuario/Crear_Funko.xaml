@@ -1,10 +1,10 @@
-﻿<mah:MetroWindow x:Class="ProyectoDI_Trimestre1.Frontend.Dialogos.Crear_Funko"
+﻿<mah:MetroWindow x:Class="Proyecto_Intermodular_Gestion.Frontend.Dialogos.Crear_Funko"
      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      xmlns:materialDesignIcons="http://materialdesigninxaml.net/winfx/xaml/shared"
-        xmlns:local="clr-namespace:ProyectoDI_Trimestre1.Frontend.Dialogos"
+        xmlns:local="clr-namespace:Proyecto_Intermodular_Gestion.Frontend.Dialogos"
         Icon="/Recursos/Iconos/añadir_figura.png"
    ShowTitleBar="False"
    ShowCloseButton="False"
@@ -15,6 +15,7 @@
         Title="Añadir Funko" Height="500" Width="600">
     
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="5*"/>

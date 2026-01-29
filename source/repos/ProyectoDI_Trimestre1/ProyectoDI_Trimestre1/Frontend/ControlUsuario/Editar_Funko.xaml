@@ -1,4 +1,4 @@
-﻿<mah:MetroWindow x:Class="ProyectoDI_Trimestre1.Frontend.ControlUsuario.Editar_Funko"
+﻿<mah:MetroWindow x:Class="Proyecto_Intermodular_Gestion.Frontend.ControlUsuario.Editar_Funko"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
                       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      xmlns:materialDesignIcons="http://materialdesigninxaml.net/winfx/xaml/shared"
-        xmlns:local="clr-namespace:ProyectoDI_Trimestre1.Frontend.ControlUsuario"
+        xmlns:local="clr-namespace:Proyecto_Intermodular_Gestion.Frontend.ControlUsuario"
         mc:Ignorable="d"
            ShowTitleBar="False"
    ShowCloseButton="False"
@@ -58,7 +58,7 @@
                 <!--Stock-->
                 <TextBlock Text="Stock del Funko" FontSize="17" FontStyle="Italic" Margin="0,15,0,5"/>
                 <Border BorderBrush="#33adff" BorderThickness="2" Width="240" Height="30">
-                    <TextBox x:Name="stock_funko_editar" Background="WhiteSmoke"/>
+                    <TextBox x:Name="stock_funko_editar" Background="WhiteSmoke" PreviewTextInput="SoloNumeros"/>
                 </Border>
             </StackPanel>
             <!-- Columna derecha -->
@@ -66,7 +66,7 @@
                 <!--Precio-->
                 <TextBlock Text="Precio del Funko" FontSize="17" FontStyle="Italic" Margin="0,0,0,5"/>
                 <Border BorderBrush="#33adff" BorderThickness="2" Width="240" Height="30">
-                    <TextBox x:Name="txt_precio_funko_editar" Background="WhiteSmoke"/>
+                    <TextBox x:Name="txt_precio_funko_editar" Background="WhiteSmoke"  PreviewTextInput="SoloDecimales"/>
                 </Border>
                 <!--Ubicación del funko-->
                 <TextBlock Text="Ubicación del Funko" FontSize="17" FontStyle="Italic" Margin="0,15,0,5"/>

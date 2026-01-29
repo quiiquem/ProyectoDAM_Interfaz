@@ -4547,9 +4547,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\enriq\\Documents\\ProyectoDAM_Interfaz\\source\\repos\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1.csproj",
-      "projectName": "ProyectoDI_Trimestre1",
-      "projectPath": "C:\\Users\\enriq\\Documents\\ProyectoDAM_Interfaz\\source\\repos\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1.csproj",
+      "projectUniqueName": "C:\\Users\\enriq\\Documents\\ProyectoDAM_Interfaz\\source\\repos\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1\\Proyecto_Intermodular_Gestion.csproj",
+      "projectName": "Proyecto_Intermodular_Gestion",
+      "projectPath": "C:\\Users\\enriq\\Documents\\ProyectoDAM_Interfaz\\source\\repos\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1\\Proyecto_Intermodular_Gestion.csproj",
       "packagesPath": "C:\\Users\\enriq\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\enriq\\Documents\\ProyectoDAM_Interfaz\\source\\repos\\ProyectoDI_Trimestre1\\ProyectoDI_Trimestre1\\obj\\",
       "projectStyle": "PackageReference",

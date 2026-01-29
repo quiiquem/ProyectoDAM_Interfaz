@@ -1,8 +1,8 @@
 ﻿using MahApps.Metro.Controls;
 using Microsoft.EntityFrameworkCore;
 using Mysqlx.Cursor;
-using ProyectoDI_Trimestre1.Backend.Modelo;
-using ProyectoDI_Trimestre1.Frontend.Mensajes;
+using Proyecto_Intermodular_Gestion.Backend.Modelo;
+using Proyecto_Intermodular_Gestion.Frontend.Mensajes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace ProyectoDI_Trimestre1.Frontend.Dialogos
+namespace Proyecto_Intermodular_Gestion.Frontend.Dialogos
 {
     /// <summary>
     /// Interaction logic for Eliminar_Funko.xaml
@@ -35,7 +35,7 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
         //Cargar nombres al iniciar la ventana
         private void CargarProductos()
         {
-            using (var db = new EnriqueMinguetProyectoContext())
+            using (var db = new ProyectoIntermodularContext())
             {
                 var productos = db.Productos.OrderBy(p => p.Nombre).ToList();
                 nombre_funko_eliminar.ItemsSource = productos;
@@ -54,7 +54,7 @@ namespace ProyectoDI_Trimestre1.Frontend.Dialogos
 
             string nombre = nombre_funko_eliminar.Text;
 
-            using (var db = new EnriqueMinguetProyectoContext())
+            using (var db = new ProyectoIntermodularContext())
             {
                 var producto = db.Productos.FirstOrDefault(p => p.Nombre == nombre);
 

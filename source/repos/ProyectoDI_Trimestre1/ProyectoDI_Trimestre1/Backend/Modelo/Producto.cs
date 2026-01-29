@@ -4,13 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProyectoDI_Trimestre1.Backend.Modelo;
+namespace Proyecto_Intermodular_Gestion.Backend.Modelo;
 
-[PrimaryKey("IdProducto", "UbicacionIdUbicacion")]
+[PrimaryKey("IdProducto", "UbicacionIdUbicacion", "CategoriasIdcategorias")]
 [Table("producto")]
 [Index("Nombre", Name = "Nombre_UNIQUE", IsUnique = true)]
-[Index("EmpleadosIdEmpleado", Name = "fk_PRODUCTO_EMPLEADOS1_idx")]
 [Index("UbicacionIdUbicacion", Name = "fk_producto_Ubicacion1_idx")]
+[Index("CategoriasIdcategorias", Name = "fk_producto_categorias1_idx")]
 public partial class Producto
 {
     [Key]
@@ -36,18 +36,19 @@ public partial class Producto
     [StringLength(45)]
     public string Categoria { get; set; } = null!;
 
-    [Column("EMPLEADOS_ID_Empleado")]
-    public int? EmpleadosIdEmpleado { get; set; }
-
     [Key]
     [Column("Ubicacion_idUbicacion")]
     public int UbicacionIdUbicacion { get; set; }
 
+    [Key]
+    [Column("categorias_idcategorias")]
+    public int CategoriasIdcategorias { get; set; }
+
+    [ForeignKey("CategoriasIdcategorias")]
+    [InverseProperty("Productos")]
+    public virtual Categoria CategoriasIdcategoriasNavigation { get; set; } = null!;
+
     [ForeignKey("UbicacionIdUbicacion")]
     [InverseProperty("Productos")]
     public virtual Ubicacion UbicacionIdUbicacionNavigation { get; set; } = null!;
-
-    [ForeignKey("ProductoIdProducto, ProductoUbicacionIdUbicacion")]
-    [InverseProperty("Productos")]
-    public virtual ICollection<Ventum> VentaIdventa { get; set; } = new List<Ventum>();
 }

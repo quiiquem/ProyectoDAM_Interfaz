@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Windows;
 
-namespace ProyectoDI_Trimestre1
+namespace Proyecto_Intermodular_Gestion
 {
     /// <summary>
     /// Interaction logic for App.xaml
